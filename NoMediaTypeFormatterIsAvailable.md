@@ -15,6 +15,15 @@ I installed the a parser to parse the multipart data.
 
 The parser I used is called [Http-Multipart-Data-Parser](https://github.com/Http-Multipart-Data-Parser/Http-Multipart-Data-Parser).
 
+```c#
+Stream dataStream = await Request.Content.ReadAsStreamAsync();
+MultipartFormDataParser multipartFormDataParser = new MultipartFormDataParser(dataStream);
+
+var resourceDetails = JsonConvert.DeserializeObject<TargetingViewModel/DTO>(multipartFormDataParser.GetParameterValue("formDataFieldName"));
+FilePart file = multipartFormDataParser.Files.First();
+```
+
+
 ## Acknowledgement
 - [Stackoverflow - No MediaTypeFormatter is available to read an object of type 'HttpRequestMessage' from content with media type 'multipart/form-data'](https://stackoverflow.com/questions/45949830/no-mediatypeformatter-is-available-to-read-an-object-of-type-httprequestmessage)
 - [Stackoverflow - Are there any multipart/form-data parser in C# - (NO ASP)](https://stackoverflow.com/questions/3880530/are-there-any-multipart-form-data-parser-in-c-sharp-no-asp)
