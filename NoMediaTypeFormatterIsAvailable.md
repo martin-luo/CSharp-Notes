@@ -1,4 +1,4 @@
-# NoMediaTypeFormatterIsAvailable.md
+# NoMediaTypeFormatterIsAvailable
 ## Detailed Error Message
 "No MediaTypeFormatter is available to read an object of type 'FormDataCollection' from content with media type 'multipart/form-data'."
 
